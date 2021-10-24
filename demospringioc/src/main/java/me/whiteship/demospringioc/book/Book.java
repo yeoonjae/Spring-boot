@@ -21,7 +21,7 @@ public class Book {
         return bookSataus;
     }
 
-    public void setBookSataus(BookStatus bookSataus) {
+    public void setBookStatus(BookStatus bookSataus) {
         this.bookSataus = bookSataus;
     }
 }

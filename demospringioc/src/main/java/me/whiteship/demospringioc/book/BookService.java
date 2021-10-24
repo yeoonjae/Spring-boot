@@ -20,7 +20,7 @@ public class BookService {
 
     public Book save(Book book) {
         book.setCreated(new Date());
-        // book.setBookStatus(BookStatus.DRAFT);
+        book.setBookStatus(BookStatus.DRAFT);
         return bookSRepository.save(book);
     }
 

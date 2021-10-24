@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="24cfc52f-1866-4696-80c1-53d77e115795" name="Changes" comment="" />
+    <list default="true" id="24cfc52f-1866-4696-80c1-53d77e115795" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/algorithm/README.md" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/f_lab" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1x17WCZIupxIxwtX6HZfb8PgxUa" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -20,7 +22,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/yeonjae/##02_STUDY/Git" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/algorithm" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -37,6 +39,7 @@
       <updated>1629510769670</updated>
       <workItem from="1629510770838" duration="405000" />
       <workItem from="1629511445335" duration="689000" />
+      <workItem from="1629512190600" duration="273000" />
     </task>
     <servers />
   </component>
@@ -53,5 +56,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

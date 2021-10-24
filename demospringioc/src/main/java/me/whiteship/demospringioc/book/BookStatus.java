@@ -1,7 +1,7 @@
 package me.whiteship.demospringioc.book;
 
-public class BookStatus {
+public enum BookStatus {
 
-    public static final Object DRAFT = "";
+    DRAFT,PUBLISHED;
 
 }

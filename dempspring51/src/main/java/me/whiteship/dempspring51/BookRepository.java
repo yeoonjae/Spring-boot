@@ -1,5 +1,6 @@
 package me.whiteship.dempspring51;
 
-public interface BookRepository {
+import org.springframework.stereotype.Repository;
 
-}
+@Repository
+public interface BookRepository { }

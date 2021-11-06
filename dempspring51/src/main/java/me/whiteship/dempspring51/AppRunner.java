@@ -1,32 +1,28 @@
 package me.whiteship.dempspring51;
 
-import java.util.Arrays;
-import java.util.Map.Entry;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.context.ApplicationContext;
-import org.springframework.core.env.Environment;
+import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Component;
 
 @Component
 public class AppRunner implements ApplicationRunner {
-
     @Autowired
-    ApplicationContext ctx;
-
-    @Autowired
-    BookRepository bookRepository;
-
-    @Value("${app.name}")
-    String appName;
+    ApplicationContext resourceLoader;
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
-        Environment environment = ctx.getEnvironment();
-        System.out.println(environment.getProperty("app.name"));
-        System.out.println(environment.getProperty("app.about"));
-        System.out.println(appName);
+        System.out.println(resourceLoader.getClass());
+
+        Resource resource = resourceLoader.getResource("text.txt");
+        System.out.println(resource.getClass());
+
+        System.out.println(resource.exists());
+        System.out.println(resource.getDescription());
+        System.out.println(resource.getFile());
+
+
     }
 }

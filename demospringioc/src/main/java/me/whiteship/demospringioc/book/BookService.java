@@ -35,5 +35,6 @@ public class BookService {
     public void postConstuct(){
         System.out.println("===============");
         System.out.println("Hello");
+        System.out.println("Hello");
     }
 }

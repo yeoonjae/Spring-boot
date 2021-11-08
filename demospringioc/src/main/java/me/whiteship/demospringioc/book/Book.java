@@ -19,7 +19,6 @@ public class Book {
 
     public BookStatus getBookSataus() {
         return bookSataus;
-
     }
 
     public void setBookStatus(BookStatus bookSataus) {

@@ -8,6 +8,8 @@ public class DemospringiocApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(DemospringiocApplication.class, args);
+		System.out.println("build Test");
+
 	}
 
 }

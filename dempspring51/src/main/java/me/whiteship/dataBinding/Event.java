@@ -30,5 +30,6 @@ public class Event {
             "id=" + id +
             ", title='" + title + '\'' +
             '}';
+
     }
 }

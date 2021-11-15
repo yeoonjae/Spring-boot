@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.context.ApplicationContext;
+import org.springframework.core.convert.ConversionService;
 import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.BeanPropertyBindingResult;
@@ -16,25 +17,26 @@ public class AppRunner implements ApplicationRunner {
     @Autowired
     Validator validator;
 
+    @Autowired
+    ConversionService conversionService;
+
     @Override
     public void run(ApplicationArguments args) throws Exception {
-        System.out.println(validator.getClass());
+        System.out.println(conversionService.getClass().toString());
 
-        Event event = new Event();
-        event.setLimit(-1); // 에러생성
-        event.setEmail("aaaa3344");
-
-        Errors errors = new BeanPropertyBindingResult(event, "event");
-
-        validator.validate(event,errors);
-
-        System.out.println(errors.hasErrors());
-        // 모든 에러를 가져온 뒤(getAllErrors), 순차적으로 순회를 하며 에러를 찍는다.
-        errors.getAllErrors().forEach(e -> {
-            System.out.println("========= error code =========");
-            Arrays.stream(e.getCodes()).forEach(System.out::println);
-            System.out.println(e.getDefaultMessage());
-        });
+//        System.out.println(validator.getClass());
+//
+//        Errors errors = new BeanPropertyBindingResult(event, "event");
+//
+//        validator.validate(event,errors);
+//
+//        System.out.println(errors.hasErrors());
+//        // 모든 에러를 가져온 뒤(getAllErrors), 순차적으로 순회를 하며 에러를 찍는다.
+//        errors.getAllErrors().forEach(e -> {
+//            System.out.println("========= error code =========");
+//            Arrays.stream(e.getCodes()).forEach(System.out::println);
+//            System.out.println(e.getDefaultMessage());
+//        });
 
 //
 //        Event event = new Event(); // 1. 이벤트 생성

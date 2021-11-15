@@ -13,7 +13,7 @@ import org.springframework.test.web.servlet.MockMvc;
 
 @RunWith(SpringRunner.class)
 @WebMvcTest
-class EventControllerTest {
+public class EventControllerTest {
 
     @Autowired
     MockMvc mockMvc;

@@ -1,23 +1,18 @@
 package com.infren.study.demowebmvc;
 
+import java.awt.PageAttributes.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
-@RequestMapping(value = "/hello")
 public class SampleController {
 
     @ResponseBody
-    @RequestMapping("/yeonjae")
+    @RequestMapping(value = "/hello",consumes = "application/json",produces = "text/plain")
     public String hello() {
-        return "hello yeonjae";
+        return "hello";
     }
 
-    @ResponseBody
-    @RequestMapping("/**")
-    public String helloYeonjae() {
-        return "hello ";
-    }
 }

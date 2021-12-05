@@ -2,6 +2,7 @@ package com.infren.study.demowebmvc;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -22,10 +23,11 @@ class SampleControllerTest {
 
     @Test
     public void eventTest1() throws Exception {
-        mockMvc.perform(get("/events/1;name=yeonjae"))
+        mockMvc.perform(post("/events")
+                .param("name","yeonjae"))
             .andDo(print())
             .andExpect(status().isOk())
-            .andExpect(jsonPath("id").value("1"));
+            .andExpect(jsonPath("$.name").value("yeonjae"));
     }
 
 }

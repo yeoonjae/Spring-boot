@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>List</title>
+</head>
+<body>
+<a th:href="@{/events/form}">Create New Event</a> <!-- eventForm 으로 가는 링크-->
+<div th:unless="${#lists.isEmpty(eventList)}">
+  <ul th:each="event: ${eventList}">
+    <p th:text="${event.Name}">Event Name</p>
+    <p th:text="${event.limit}">Event Limit</p>
+  </ul>
+</div>
+
+</body>
+</html>

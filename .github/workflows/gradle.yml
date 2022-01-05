@@ -23,9 +23,6 @@ jobs:
         java-version: '11'
         distribution: 'adopt'
         cache: gradle
-    - name: Grant execute permission for gradlew
-      run: chmod +x gradlew
-      working-directory: ${{ env.working-directory }}
     - name: Secrets Check
       env: 
         MYSQL_DB_NAME: ${{ secrets.MYSQL_DB_NAME }}
@@ -33,7 +30,10 @@ jobs:
         MYSQL_PORT:  ${{ secrets.MYSQL_PORT }}
         MYSQL_URL:  ${{ secrets.MYSQL_URL }}
         MYSQL_USERNAME:  ${{ secrets.MYSQL_USERNAME }}
+      run: echo My MYSQL_USERNAME is $MYSQL_USERNAME
+    - name: Grant execute permission for gradlew
+      run: chmod +x gradlew
+      working-directory: ${{ env.working-directory }}
+    - name: Build with Gradle
       run: ./gradlew build
-   # - name: Build with Gradle
-   #  run: ./gradlew build
-   #   working-directory: ${{ env.working-directory }}
+      working-directory: ${{ env.working-directory }}

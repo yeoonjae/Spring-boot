@@ -11,13 +11,7 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-    env : 
-      working-directory: ./demospringioc
-      MYSQL_DB_NAME: ${{ secrets.MYSQL_DB_NAME }}
-      MYSQL_PASSWORD:  ${{ secrets.MYSQL_PASSWORD }}
-      MYSQL_PORT:  ${{ secrets.MYSQL_PORT }}
-      MYSQL_URL:  ${{ secrets.MYSQL_URL }}
-      MYSQL_USERNAME:  ${{ secrets.MYSQL_USERNAME }}
+    environment: test
     steps:
     - uses: actions/checkout@v2
     - name: Set up JDK 11

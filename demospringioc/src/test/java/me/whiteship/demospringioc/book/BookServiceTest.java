@@ -3,12 +3,14 @@ package me.whiteship.demospringioc.book;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.when;
 
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import java.util.Map;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
-import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 
-@RunWith(SpringRunner.class)
+@ExtendWith(SpringExtension.class)
 public class BookServiceTest {
 
     @Mock // Mock을 통해 가짜 객체 생성
@@ -27,4 +29,5 @@ public class BookServiceTest {
         assertThat(book.getBookSataus()).isEqualTo(BookStatus.DRAFT);
         assertThat(result).isNotNull();
     }
+
 }

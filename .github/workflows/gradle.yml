@@ -1,25 +1,19 @@
-# This workflow will build a Java project with Gradle and cache/restore any dependencies to improve the workflow execution time
-# For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-gradle
-
 name: Java CI with Gradle
 
 on:
   push:
-    branches: [ master ]
+    branches: [ develop ]
+  pull_request:
+    branches: [ develop ]
 
 jobs:
   build:
     runs-on: ubuntu-latest
     environment: test
+    env : 
+      working-directory: ./demospringioc
     steps:
     - uses: actions/checkout@v2
-    - name: Semantic release
-      env:
-        DEV_MYSQL_URL: ${{ secrets.MYSQL_URL }}
-        DEV_MYSQL_PORT: ${{ secrets.MYSQL_PORT }}
-        MYSQL_DATABASE_NAME: ${{ secrets.MYSQL_DB_NAME }}
-        DEV_MYSQL_USERNAME: ${{ secrets.MYSQL_USERNAME }}
-        DEV_MYSQL_PASSWORD: ${{ secrets.MYSQL_PASSWORD }}
     - name: Set up JDK 11
       uses: actions/setup-java@v2
       with:
@@ -29,6 +23,11 @@ jobs:
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
       working-directory: ${{ env.working-directory }}
-    - name: Build with Gradle
+    - name: Secrets Check
+      env: 
+        MYSQL_DB_NAME: ${{ secrets.MYSQL_DB_NAME }}
+        MYSQL_PASSWORD:  ${{ secrets.MYSQL_PASSWORD }}
+        MYSQL_PORT:  ${{ secrets.MYSQL_PORT }}
+        MYSQL_URL:  ${{ secrets.MYSQL_URL }}
+        MYSQL_USERNAME:  ${{ secrets.MYSQL_USERNAME }}
       run: ./gradlew build
-      working-directory: ${{ env.working-directory }}

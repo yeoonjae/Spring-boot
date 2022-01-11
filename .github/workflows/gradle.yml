@@ -20,14 +20,12 @@ jobs:
         java-version: '11'
         distribution: 'adopt'
         cache: gradle
-    - name: Hello world action
-      env: 
-        MYSQL_PASSWORD:  ${{ secrets.MYSQL_PASSWORD }}
-        MYSQL_USERNAME:  ${{ secrets.MYSQL_USERNAME }}
-      run: echo My password is $MYSQL_PASSWORD
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
       working-directory: ${{ env.working-directory }}
     - name: Build with Gradle
+      env: 
+        MYSQL_PASSWORD:  ${{ secrets.MYSQL_PASSWORD }}
+        MYSQL_USERNAME:  ${{ secrets.MYSQL_USERNAME }}
       run: ./gradlew build
       working-directory: ${{ env.working-directory }}

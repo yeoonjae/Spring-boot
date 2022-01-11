@@ -24,8 +24,7 @@ jobs:
       env: 
         MYSQL_PASSWORD:  ${{ secrets.MYSQL_PASSWORD }}
         MYSQL_USERNAME:  ${{ secrets.MYSQL_USERNAME }}
-      run: |
-        example-command "$MYSQL_PASSWORD"
+      run: echo My password is $MYSQL_PASSWORD
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
       working-directory: ${{ env.working-directory }}

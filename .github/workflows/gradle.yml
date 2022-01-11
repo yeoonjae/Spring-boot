@@ -1,18 +1,15 @@
-# This workflow will build a Java project with Gradle and cache/restore any dependencies to improve the workflow execution time
-# For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-gradle
-
 name: Java CI with Gradle
 
 on:
   push:
-    branches: [ develop ]
+    branches: [ master ]
   pull_request:
     branches: [ develop ]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
+    environment: test
     env : 
       working-directory: ./demospringioc
     steps:
@@ -33,7 +30,4 @@ jobs:
         MYSQL_PORT:  ${{ secrets.MYSQL_PORT }}
         MYSQL_URL:  ${{ secrets.MYSQL_URL }}
         MYSQL_USERNAME:  ${{ secrets.MYSQL_USERNAME }}
-        run: ./gradlew build
-   # - name: Build with Gradle
-   #  run: ./gradlew build
-   #   working-directory: ${{ env.working-directory }}
+      run: ./gradlew build

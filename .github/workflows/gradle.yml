@@ -23,11 +23,8 @@ jobs:
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
       working-directory: ${{ env.working-directory }}
-    - name: Secrets Check
+    - name: Hello world action
       env: 
-        MYSQL_DB_NAME: ${{ secrets.MYSQL_DB_NAME }}
         MYSQL_PASSWORD:  ${{ secrets.MYSQL_PASSWORD }}
-        MYSQL_PORT:  ${{ secrets.MYSQL_PORT }}
-        MYSQL_URL:  ${{ secrets.MYSQL_URL }}
         MYSQL_USERNAME:  ${{ secrets.MYSQL_USERNAME }}
       run: ./gradlew build
